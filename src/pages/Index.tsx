@@ -141,6 +141,105 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4 bg-gradient-to-br from-secondary/5 to-background">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши кейсы</h2>
+            <p className="text-xl text-muted-foreground">Реальные результаты для реальных мероприятий</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Концерт звезды эстрады",
+                type: "Концерт",
+                budget: "250 000 ₽",
+                sold: "2 400",
+                total: "2 500",
+                roi: "420%",
+                description: "Зал на 2500 мест заполнен на 96% за 5 недель. ROI 420%. Основной канал — Яндекс.Директ."
+              },
+              {
+                title: "Стендап-шоу",
+                type: "Комедия",
+                budget: "120 000 ₽",
+                sold: "850",
+                total: "900",
+                roi: "380%",
+                description: "Камерная площадка 900 мест. Продано 94% билетов за 4 недели через таргет VK."
+              },
+              {
+                title: "Музыкальный фестиваль",
+                type: "Фестиваль",
+                budget: "800 000 ₽",
+                sold: "12 000",
+                total: "15 000",
+                roi: "290%",
+                description: "Двухдневный фестиваль. 80% заполняемость, ROI 290%. Комплексная кампания Яндекс + VK."
+              },
+              {
+                title: "Театральная премьера",
+                type: "Спектакль",
+                budget: "90 000 ₽",
+                sold: "520",
+                total: "550",
+                roi: "350%",
+                description: "Камерный театр. 95% проданных билетов за 3 недели. Акцент на культурную аудиторию."
+              },
+              {
+                title: "Рок-концерт",
+                type: "Концерт",
+                budget: "180 000 ₽",
+                sold: "1 800",
+                total: "2 000",
+                roi: "310%",
+                description: "Андеграунд-площадка на 2000 человек. 90% заполнение за месяц. Молодая аудитория 18-30."
+              },
+              {
+                title: "Детское шоу",
+                type: "Мероприятие",
+                budget: "150 000 ₽",
+                sold: "1 200",
+                total: "1 200",
+                roi: "400%",
+                description: "Full house за 3 недели! Семейная аудитория. Высокая конверсия через Яндекс.Директ."
+              }
+            ].map((caseItem, idx) => (
+              <Card key={idx} className="border-2 hover:border-secondary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+                <CardContent className="p-6">
+                  <div className="mb-4">
+                    <div className="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full mb-3">
+                      {caseItem.type}
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{caseItem.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{caseItem.description}</p>
+                  </div>
+                  <div className="space-y-3 pt-4 border-t">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-muted-foreground">Бюджет:</span>
+                      <span className="font-semibold">{caseItem.budget}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-muted-foreground">Продано билетов:</span>
+                      <span className="font-semibold text-primary">{caseItem.sold} из {caseItem.total}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-muted-foreground">ROI:</span>
+                      <span className="text-lg font-bold text-secondary">{caseItem.roi}</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+              Смотреть все 33 кейса
+              <Icon name="ExternalLink" size={20} className="ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-16">
