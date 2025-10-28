@@ -291,6 +291,82 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-background">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Что говорят клиенты</h2>
+            <p className="text-xl text-muted-foreground">Отзывы организаторов, которые доверились нам</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Александр Петров",
+                role: "Продюсер концертов",
+                company: "LiveSound Production",
+                text: "Работали над концертом на 2500 человек. Ребята заполнили зал на 96% за 5 недель! ROI превзошёл все ожидания — 420%. Особенно впечатлила скорость запуска и ежедневная аналитика.",
+                rating: 5
+              },
+              {
+                name: "Мария Соколова",
+                role: "Директор театра",
+                company: "Камерный театр «Эрмитаж»",
+                text: "Скептически относилась к интернет-рекламе для театра. Но результат поразил — 95% билетов за 3 недели! Команда понимает культурную аудиторию. Всегда на связи, отвечают мгновенно.",
+                rating: 5
+              },
+              {
+                name: "Дмитрий Волков",
+                role: "Организатор фестивалей",
+                company: "Open Air Fest",
+                text: "Большой двухдневный фестиваль на 15 000 человек. Продали 12 000 билетов с ROI 290%. Сложная кампания с несколькими сегментами аудитории — справились на отлично!",
+                rating: 5
+              },
+              {
+                name: "Елена Краснова",
+                role: "Промоутер",
+                company: "Stand Up Russia",
+                text: "Сотрудничаем уже год. Запустили 8 стендап-шоу в разных городах. Средняя заполняемость 92%! Команда работает как часы — всё в срок, всё по делу. Рекомендую всем.",
+                rating: 5
+              },
+              {
+                name: "Игорь Семёнов",
+                role: "Event-менеджер",
+                company: "Kids Show Production",
+                text: "Детское шоу на 1200 мест — full house за 3 недели! Удивила работа с семейной аудиторией, точечные настройки. ROI 400% — лучший результат за всю практику.",
+                rating: 5
+              },
+              {
+                name: "Ольга Михайлова",
+                role: "Директор концертного зала",
+                company: "Arena Live",
+                text: "Обращались с горящим проектом — концерт через 4 недели. Запустили рекламу в тот же день! Продали 1800 из 2000 билетов. Профессионализм и скорость — это про них.",
+                rating: 5
+              }
+            ].map((review, idx) => (
+              <Card key={idx} className="border-2 hover:border-primary transition-all duration-300 hover:shadow-lg animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon name="User" size={24} className="text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg">{review.name}</h3>
+                      <p className="text-sm text-muted-foreground">{review.role}</p>
+                      <p className="text-xs text-muted-foreground">{review.company}</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-1 mb-3">
+                    {Array.from({ length: review.rating }).map((_, i) => (
+                      <Icon key={i} name="Star" size={16} className="text-secondary fill-secondary" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{review.text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
